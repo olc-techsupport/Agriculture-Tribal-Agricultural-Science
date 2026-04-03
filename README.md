@@ -136,9 +136,11 @@ Field data entry templates are in `data/templates/`:
 | 1 | Critical | 🔴 Red | REST |
 
 ## Citation
-Jones, L. (2025). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
+Jones, L. and Sanovia, J., (2025). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
 
 ## Data Governance Contact
 
 For questions about data use, Tribal data governance, or collaboration:  
-Lilly Jones, PhD — Daear Consulting, LLC
+**James Sanovia, MS**  
+Daear Consulting, LLC  
+[daearconsulting@gmail.com](mailto:daearconsulting@gmail.com)
