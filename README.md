@@ -12,7 +12,7 @@ Dakota Tribal Nations.
 
 It operates on two parallel tracks:
 
-### Track 1 — Analysis Notebooks (Public Data)
+### Track 1: Analysis Notebooks (Public Data)
 Jupyter notebooks using publicly available data to establish regional context:
 satellite vegetation condition (NDVI), drought indices, federal agricultural
 statistics, weather, and groundwater. These notebooks show what satellite and
