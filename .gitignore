@@ -205,3 +205,56 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Tribal observational data: NEVER commit 
+# These files contain sensitive Tribal operational data.
+# See data/templates/ for entry templates.
+data/raw/
+data/processed/
+data/cache/
+
+# Credentials 
+.env
+*.env
+secrets.yaml
+config/secrets.yaml
+
+# Python 
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Jupyter 
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment 
+.conda/
+*.conda
+envs/
+
+# IDE 
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Outputs 
+outputs/figures/
+outputs/*.csv
+outputs/*.geojson
+
+# Large files 
+*.nc
+*.tif
+*.tiff
+*.zip
