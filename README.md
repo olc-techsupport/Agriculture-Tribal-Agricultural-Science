@@ -75,9 +75,9 @@ tribal_ag_sd/
 | 01_land_base_context | Land area, trust land, jurisdiction | Census TIGER | All SD |
 | 02_drought_climate_context | Historical drought frequency and severity | NOAA PDSI | All SD |
 | 03_vegetation_condition_ndvi | Satellite vegetation proxy for pasture condition | MODIS MOD13Q1 | Pine Ridge, Rosebud |
-| 04_usda_nass_agricultural_context | County-level livestock and agricultural statistics | USDA NASS | All 8 SD |
+| 04_usda_nass_agricultural_context | County-level livestock and agricultural statistics | USDA NASS | All SD |
 | 05_water_availability | USGS groundwater monitoring coverage and gaps | USGS NWIS | Pine Ridge, Rosebud |
-| 06_system_stress_index | Combined drought and vegetation stress indicator | PDSI + NDVI | All 8 SD |
+| 06_system_stress_index | Combined drought and vegetation stress indicator | PDSI/NDVI | All SD |
 | 07_climate_projections_agriculture | Projected temperature and precip change | MACAv2 | Pine Ridge, Rosebud |
 
 ## Quick Start
