@@ -1,8 +1,8 @@
 # Tribal Agriculture and Land Health in South Dakota
 
 **Authors:** Lilly Jones, PhD (Daear Consulting, LLC)  
-**Primary Focus:** Oglala Lakota (Pine Ridge), Rosebud Sioux  
-**In Scope:** All 8 South Dakota Tribal Nations  
+**Primary Focus:** Oglala Lakota (Pine Ridge), Sicangu Lakota (Rosebud)  
+**In Scope:** All South Dakota Tribal Nations  
 **Status:** Active development
 
 ## Overview
@@ -54,12 +54,12 @@ tribal_ag_sd/
 │   ├── viz/                # Styles, charts, maps
 │   └── indigenous/         # Data sovereignty framework
 ├── data/
-│   ├── templates/          # ← COMMITTED: Excel entry templates for field staff
-│   ├── raw/                # ← GITIGNORED: Tribal observational data
-│   ├── processed/          # ← GITIGNORED: Pipeline outputs
-│   └── cache/              # ← GITIGNORED: Public data cache
+│   ├── templates/          # COMMITTED: Excel entry templates for field staff
+│   ├── raw/                # GITIGNORED: Tribal observational data
+│   ├── processed/          # GITIGNORED: Pipeline outputs
+│   └── cache/              # GITIGNORED: Public data cache
 ├── config/
-│   └── config.yaml         # All thresholds — adjust here, not in code
+│   └── config.yaml         # All thresholds: adjust here, not in code
 ├── scripts/
 │   └── run_pipeline.py     # Single-command pipeline runner
 ├── docs/
@@ -70,15 +70,14 @@ tribal_ag_sd/
 ```
 
 ## Analysis Notebooks
-
 | Notebook | Focus | Data Source | Tribes |
 |---|---|---|---|
-| 01_land_base_context | Land area, trust land, jurisdiction | Census TIGER | All 8 SD |
-| 02_drought_climate_context | Historical drought frequency and severity | NOAA PDSI | All 8 SD |
+| 01_land_base_context | Land area, trust land, jurisdiction | Census TIGER | All SD |
+| 02_drought_climate_context | Historical drought frequency and severity | NOAA PDSI | All SD |
 | 03_vegetation_condition_ndvi | Satellite vegetation proxy for pasture condition | MODIS MOD13Q1 | Pine Ridge, Rosebud |
 | 04_usda_nass_agricultural_context | County-level livestock and agricultural statistics | USDA NASS | All 8 SD |
 | 05_water_availability | USGS groundwater monitoring coverage and gaps | USGS NWIS | Pine Ridge, Rosebud |
-| 06_system_stress_index | Combined drought + vegetation stress indicator | PDSI + NDVI | All 8 SD |
+| 06_system_stress_index | Combined drought and vegetation stress indicator | PDSI + NDVI | All 8 SD |
 | 07_climate_projections_agriculture | Projected temperature and precip change | MACAv2 | Pine Ridge, Rosebud |
 
 ## Quick Start
@@ -101,7 +100,6 @@ streamlit run app/app.py
 
 ## Environment Variables
 Create a `.env` file in the repo root (never committed):
-
 ```
 # USDA NASS API key (free: https://quickstats.nass.usda.gov/api)
 NASS_API_KEY=your_key
