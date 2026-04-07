@@ -1,5 +1,4 @@
 # Tribal Agriculture and Land Health in South Dakota
-
 **Authors:** Lilly Jones, PhD (Daear Consulting, LLC)  
 **Primary Focus:** Oglala Lakota (Pine Ridge), Sicangu Lakota (Rosebud)  
 **In Scope:** All South Dakota Tribal Nations  
@@ -20,7 +19,6 @@ federal data can and cannot see about Tribal agricultural lands and motivate
 the case for Tribal-led data collection.
 
 ### Track 2: Operational Pipeline and Dashboard (Tribal Data)
-
 A processing pipeline and Streamlit dashboard for Tribal observational data:
 pasture condition scores, grazing logs, animal condition scores, and well levels.
 **Tribal observational data is never committed to this repository.** It lives on
@@ -112,7 +110,6 @@ SYNOPTIC_TOKEN=your_token
 ```
 
 ## Data Templates
-
 Field data entry templates are in `data/templates/`:
 
 | Template | Contents |

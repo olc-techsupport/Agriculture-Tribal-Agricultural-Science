@@ -1,1 +1,91 @@
+# config.yaml Centralized thresholds for Tribal Ag & Land Health series
+#
+# All threshold values used by the pipeline and dashboard live here.
+# Field staff and Tribal programs can adjust these without touching code.
+# Changes here flow through to pipeline outputs and dashboard displays.
 
+# Pasture condition 
+pasture:
+  critical_score: 2       # condition_score <= this → Critical
+  watch_score:    3       # condition_score == this → Watch
+  healthy_score:  4       # condition_score >= this → Healthy
+
+# Grazing pressure (Animal Unit Days/acre)
+grazing_pressure:
+  low:      3.0
+  moderate: 5.0
+  high:     7.0
+  critical: 10.0
+
+# Water/groundwater
+water:
+  decline_ft_per_year: -1.0   # ft/year threshold for "declining" well
+  critical_decline:    -3.0   # ft/year threshold for "critical" well
+
+# Drought (PDSI) 
+drought:
+  moderate:  -2.0
+  severe:    -3.0
+  extreme:   -4.0
+
+# NDVI (vegetation condition proxy) 
+ndvi:
+  poor:      0.25
+  fair:      0.35
+  good:      0.45
+  excellent: 0.55
+
+# System stress (combined water and pasture) 
+# Both conditions must be at or below threshold to trigger system stress flag
+system_stress:
+  water_statuses:   ["Critical", "Declining"]
+  pasture_statuses: ["Critical", "Declining"]
+
+# Decision engine 
+decisions:
+  # Grazing pressure quantile for "high pressure" flag in rule engine
+  high_pressure_quantile: 0.75
+
+  # Priority order for action ranking (lower number = higher priority)
+  action_priority:
+    REST:                         1
+    REDUCE GRAZING:               2
+    REDUCE GRAZING (WATER LIMIT): 2
+    MONITOR:                      3
+    OK / POTENTIAL GRAZE:         4
+
+# Dashboard display 
+dashboard:
+  map_center_lat:  43.3
+  map_center_lon: -102.5
+  map_zoom:        8
+
+  # Point radius on map (meters), scaled by grazing pressure
+  point_radius_base:   800
+  point_radius_scale:  200
+  point_radius_max:    2000   # cap to prevent one pasture dominating
+
+  # Colors (RGB)
+  colors:
+    critical:  [255, 0,   0  ]
+    declining: [255, 165, 0  ]
+    improving: [0,   150, 255]
+    stable:    [0,   200, 0  ]
+    water:     [0,   200, 255]
+
+# Analysis parameters 
+analysis:
+  # NDVI growing season months (May–September for mixed-grass prairie)
+  ndvi_growing_season_months: [5, 6, 7, 8, 9]
+
+  # Pasture recovery: minimum condition improvement to count as recovery
+  recovery_min_improvement: 1
+
+  # Climate projection scenarios
+  maca_scenarios: ["rcp45", "rcp85"]
+  maca_models:    ["BNU-ESM", "IPSL-CM5A-LR", "NorESM1-M"]
+
+  # Future periods for climate analysis
+  mid_century:  [2040, 2069]
+  end_century:  [2070, 2099]
+  historical:   [1981, 2010]
