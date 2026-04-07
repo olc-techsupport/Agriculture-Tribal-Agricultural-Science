@@ -15,6 +15,14 @@ References
 OCAP®  : https://fnigc.ca/ocap-training/
 CARE   : https://www.gida-global.org/care
 FAIR   : https://www.go-fair.org/fair-principles/
+
+IEEE 2890-2025: Recommended Practice for Provenance of Indigenous Peoples' Data
+  The first international standard for Indigenous data provenance. Establishes
+  common parameters for describing and recording how data about or related to
+  Indigenous Peoples should be disclosed, connected to people and place, and
+  governed across its lifecycle — including AI/ML and biodiversity contexts.
+  Reference: https://standards.ieee.org/ieee/2890/10318/
+
 """
 
 from __future__ import annotations
@@ -71,7 +79,7 @@ DATA_SOURCES: dict[str, DataSource] = {
         license="Public domain (federal government)",
         fair_notes=(
             "County-level agricultural statistics including livestock counts, "
-            "crop production, land use. Quinquennial census and annual surveys. "
+            "crop production, land use. Quinquennial census + annual surveys. "
             "Free API access: register at https://quickstats.nass.usda.gov/api"
         ),
         attribution=(
@@ -149,7 +157,7 @@ DATA_SOURCES: dict[str, DataSource] = {
         license="Public domain (federal government)",
         fair_notes=(
             "Well water level measurements via USGS NWIS REST API. "
-            "Coverage is sparse on many Tribal lands — gaps are a finding, "
+            "Coverage is sparse on many Tribal lands, so gaps are a finding, "
             "not an absence of groundwater importance."
         ),
         attribution="USGS National Water Information System (NWIS).",
@@ -180,9 +188,9 @@ DATA_SOURCES: dict[str, DataSource] = {
     "pasture_conditions": DataSource(
         name="Tribal Pasture Condition Observations",
         url="",
-        steward="Tribal Nation — data ownership per OCAP® principles",
+        steward="Tribal Nation: data ownership per OCAP® principles",
         tribal_data=True,
-        license="Tribal data — not for public distribution",
+        license="Tribal data: not for public distribution",
         fair_notes=(
             "Field-collected pasture condition scores (1–5 NRCS scale). "
             "Collected by Tribal land managers. Schema defined in "
@@ -208,9 +216,9 @@ DATA_SOURCES: dict[str, DataSource] = {
     "grazing_log": DataSource(
         name="Tribal Grazing Log",
         url="",
-        steward="Tribal Nation — data ownership per OCAP® principles",
+        steward="Tribal Nation: data ownership per OCAP® principles",
         tribal_data=True,
-        license="Tribal data — not for public distribution",
+        license="Tribal data: not for public distribution",
         fair_notes=(
             "Field-collected grazing records: pasture, date, animal count, days. "
             "Schema: data/templates/grazing_log_template.xlsx"
@@ -230,11 +238,11 @@ DATA_SOURCES: dict[str, DataSource] = {
     ),
 
     "groundwater_tribal": DataSource(
-        name="Tribal Groundwater / Well Level Observations",
+        name="Tribal Groundwater/Well Level Observations",
         url="",
-        steward="Tribal Nation — data ownership per OCAP® principles",
+        steward="Tribal Nation: data ownership per OCAP® principles",
         tribal_data=True,
-        license="Tribal data — not for public distribution",
+        license="Tribal data: not for public distribution",
         fair_notes=(
             "Well water level measurements collected by Tribal water programs. "
             "Schema: data/templates/groundwater_template.xlsx"
@@ -248,7 +256,7 @@ DATA_SOURCES: dict[str, DataSource] = {
         care_notes=(
             "Water is central to Tribal sovereignty, treaty rights, and cultural "
             "practice. Analysis must serve Tribal water management goals and "
-            "support — not undermine — Tribal water rights assertions."
+            "support Tribal water rights assertions."
         ),
     ),
 }
@@ -277,6 +285,12 @@ FAIR   : Data is Findable, Accessible, Interoperable, and Reusable.
   FAIR governs technical standards; CARE and OCAP® govern the ethical
   obligations to Tribal Nations that FAIR alone does not address.
   Reference: https://www.go-fair.org/fair-principles/
+
+IEEE 2890-2025 : Recommended Practice for Provenance of Indigenous Peoples' Data.
+  Establishes common parameters for Indigenous data provenance : describing and
+  recording how data about Indigenous Peoples should be disclosed, connected to
+  people and place, and governed across its lifecycle.
+  Reference: https://standards.ieee.org/ieee/2890/10318/
 
 CRITICAL DISTINCTION IN THIS SERIES:
   PUBLIC DATA  : federal/public datasets used in analysis notebooks.
@@ -353,3 +367,4 @@ def check_tribal_data_governance(source_key: str) -> dict:
         "ocap_notes":      src.ocap_notes,
         "care_notes":      src.care_notes,
     }
+
