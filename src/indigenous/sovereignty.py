@@ -150,7 +150,7 @@ DATA_SOURCES: dict[str, DataSource] = {
     ),
 
     "usgs_nwis_groundwater": DataSource(
-        name="USGS National Water Information System — Groundwater",
+        name="USGS National Water Information System Groundwater",
         url="https://waterservices.usgs.gov/nwis/",
         steward="US Geological Survey",
         tribal_data=False,
