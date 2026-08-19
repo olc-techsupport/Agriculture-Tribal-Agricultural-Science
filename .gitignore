@@ -252,6 +252,8 @@ Thumbs.db
 outputs/figures/
 outputs/*.csv
 outputs/*.geojson
+outputs/executed_notebooks/
+outputs/manifest.json
 
 # Large files 
 *.nc

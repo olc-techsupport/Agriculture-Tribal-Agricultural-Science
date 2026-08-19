@@ -13,6 +13,7 @@ Design principles
 """
 
 from pathlib import Path
+import yaml
 
 # Repo root 
 REPO_ROOT  = Path(__file__).resolve().parents[2]
@@ -24,6 +25,9 @@ PROCESSED_DIR  = DATA_DIR / "processed"
 CACHE_DIR      = DATA_DIR / "cache"
 TEMPLATES_DIR  = DATA_DIR / "templates"
 OUTPUTS_DIR    = REPO_ROOT / "outputs"
+CONFIG_PATH    = REPO_ROOT / "config" / "config.yaml"
+with CONFIG_PATH.open(encoding="utf-8") as _config_stream:
+    CONFIG = yaml.safe_load(_config_stream)
 
 # Coordinate reference systems 
 CRS_GEOGRAPHIC = "EPSG:4326"    # WGS84 geographic
@@ -82,9 +86,9 @@ PASTURE_CONDITION_LABELS = {
 }
 
 PASTURE_STATUS_THRESHOLDS = {
-    "critical":  2,   # condition_score <= 2
-    "watch":     3,   # condition_score == 3
-    "healthy":   4,   # condition_score >= 4
+    "critical": CONFIG["pasture"]["critical_score"],
+    "watch": CONFIG["pasture"]["watch_score"],
+    "healthy": CONFIG["pasture"]["healthy_score"],
 }
 
 # Drought index thresholds (PDSI) 
@@ -102,21 +106,11 @@ PDSI_THRESHOLDS = {
 # NDVI thresholds (vegetation condition proxy)
 # Moderate Resolution Imaging Spectroradiometer (MODIS)
 # Growing season NDVI (May–September) for mixed-grass prairie
-NDVI_THRESHOLDS = {
-    "poor":     0.25,   # Below this = poor vegetation condition
-    "fair":     0.35,
-    "good":     0.45,
-    "excellent": 0.55,
-}
+NDVI_THRESHOLDS = dict(CONFIG["ndvi"])
 
 # Grazing pressure thresholds 
 # Animals × days/pasture acres (Animal Unit Days/acre)
-GRAZING_PRESSURE_THRESHOLDS = {
-    "low":      3.0,
-    "moderate": 5.0,
-    "high":     7.0,
-    "critical": 10.0,
-}
+GRAZING_PRESSURE_THRESHOLDS = dict(CONFIG["grazing_pressure"])
 
 # Public data URLs
 CENSUS_TIGER_BASE       = "https://www2.census.gov/geo/tiger"
