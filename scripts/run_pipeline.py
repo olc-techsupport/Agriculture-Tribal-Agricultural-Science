@@ -1,5 +1,7 @@
-"""Validate and process locally governed Tribal observational data."""
 from __future__ import annotations
+
+"""Validate and process locally governed Tribal observational data."""
+
 import argparse, json, sys
 from datetime import datetime, timezone
 from pathlib import Path

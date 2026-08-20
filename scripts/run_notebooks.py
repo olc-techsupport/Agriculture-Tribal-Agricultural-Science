@@ -1,6 +1,6 @@
-"""Execute the public-data notebooks in dependency order."""
-
 from __future__ import annotations
+
+"""Execute the public-data notebooks in dependency order."""
 
 import argparse
 import subprocess
@@ -27,7 +27,7 @@ def main() -> int:
     parser.add_argument("--kernel", default="tribal-ag-sd")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
-    executed = root / "outputs" / "executed_notebooks"
+    executed = root/"outputs"/"executed_notebooks"
     executed.mkdir(parents=True, exist_ok=True)
     for index, name in enumerate(NOTEBOOKS, start=1):
         if not args.start <= index <= args.end:
