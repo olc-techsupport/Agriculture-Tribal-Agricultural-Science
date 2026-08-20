@@ -1,6 +1,6 @@
-"""Small, local provenance manifests for generated artifacts."""
-
 from __future__ import annotations
+
+"""Small, local provenance manifests for generated artifacts."""
 
 import hashlib
 import json
@@ -36,7 +36,7 @@ def write_manifest(repo_root: Path, outputs: list[Path], inputs: list[Path], *, 
         "inputs": [{"path": str(p.relative_to(repo_root)), "sha256": sha256(p)} for p in inputs if p.exists()],
         "outputs": [{"path": str(p.relative_to(repo_root)), "sha256": sha256(p)} for p in existing_outputs],
     }
-    destination = repo_root / "outputs" / "manifest.json"
+    destination = repo_root/"outputs"/"manifest.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return destination

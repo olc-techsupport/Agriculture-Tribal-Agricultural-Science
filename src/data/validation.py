@@ -1,11 +1,10 @@
-"""Schema and output validation for public and Tribal data workflows."""
-
 from __future__ import annotations
+
+"""Schema and output validation for public and Tribal data workflows."""
 
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
-
 import pandas as pd
 
 
