@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 sovereignty.py Data governance framework for Tribal Agriculture series.
 
@@ -25,7 +27,6 @@ IEEE 2890-2025: Recommended Practice for Provenance of Indigenous Peoples' Data
 
 """
 
-from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -145,7 +146,7 @@ DATA_SOURCES: dict[str, DataSource] = {
         care_notes=(
             "NDVI is used here as a public data proxy that motivates Tribal-led "
             "on-the-ground observation (pasture condition scoring). The goal is to "
-            "show what satellite data cannot see — not to replace Tribal knowledge."
+            "show what satellite data cannot see, not to replace Tribal knowledge."
         ),
     ),
 
@@ -265,9 +266,7 @@ DATA_SOURCES: dict[str, DataSource] = {
 # Acknowledgment and citation functions 
 
 _FRAMEWORK_PREAMBLE = """
-======================================================================
 DATA SOVEREIGNTY ACKNOWLEDGMENT
-======================================================================
 This analysis uses data that describes Indigenous and Tribal lands,
 communities, and agricultural and water systems. This project is
 guided by three complementary data governance frameworks:
@@ -303,9 +302,7 @@ CRITICAL DISTINCTION IN THIS SERIES:
 """
 
 _TEK_DISCLAIMER = """
-----------------------------------------------------------------------
 TRADITIONAL ECOLOGICAL KNOWLEDGE (TEK) DISCLAIMER
-----------------------------------------------------------------------
 This analysis uses publicly available proxy data (satellite NDVI,
 federal weather stations, USDA statistics) as approximations of
 conditions on Tribal lands. These proxies do not represent:
@@ -325,12 +322,11 @@ def print_data_acknowledgment(source_keys: list[str] | None = None) -> None:
     print(_TEK_DISCLAIMER)
     if source_keys:
         print("DATA SOURCES USED IN THIS ANALYSIS:")
-        print("=" * 70)
         for key in source_keys:
             src = DATA_SOURCES.get(key)
             if src is None:
                 continue
-            tribal_flag = " [TRIBAL DATA — NOT IN REPO]" if src.tribal_data else ""
+            tribal_flag = " [TRIBAL DATA: NOT IN REPO]" if src.tribal_data else ""
             print(f"\n  • {src.name}{tribal_flag}")
             print(f"    Steward : {src.steward}")
             if src.ocap_notes:
@@ -340,7 +336,7 @@ def print_data_acknowledgment(source_keys: list[str] | None = None) -> None:
 
 
 def generate_citations(source_keys: list[str]) -> str:
-    lines = ["REFERENCES AND DATA CITATIONS", "=" * 50]
+    lines = ["REFERENCES AND DATA CITATIONS", ]
     for key in source_keys:
         src = DATA_SOURCES.get(key)
         if src and src.attribution:

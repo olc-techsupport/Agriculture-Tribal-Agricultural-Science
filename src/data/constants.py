@@ -19,13 +19,13 @@ import yaml
 REPO_ROOT  = Path(__file__).resolve().parents[2]
 
 # Data directories 
-DATA_DIR       = REPO_ROOT / "data"
-RAW_DIR        = DATA_DIR / "raw"
-PROCESSED_DIR  = DATA_DIR / "processed"
-CACHE_DIR      = DATA_DIR / "cache"
-TEMPLATES_DIR  = DATA_DIR / "templates"
-OUTPUTS_DIR    = REPO_ROOT / "outputs"
-CONFIG_PATH    = REPO_ROOT / "config" / "config.yaml"
+DATA_DIR       = REPO_ROOT/"data"
+RAW_DIR        = DATA_DIR/"raw"
+PROCESSED_DIR  = DATA_DIR/"processed"
+CACHE_DIR      = DATA_DIR/"cache"
+TEMPLATES_DIR  = DATA_DIR/"templates"
+OUTPUTS_DIR    = REPO_ROOT/"outputs"
+CONFIG_PATH    = REPO_ROOT/"config"/"config.yaml"
 with CONFIG_PATH.open(encoding="utf-8") as _config_stream:
     CONFIG = yaml.safe_load(_config_stream)
 
@@ -136,14 +136,14 @@ MACA_THREDDS_BASE       = "http://thredds.northwestknowledge.net:8080/thredds/do
 # Operational data paths (gitignored: Tribal observational data)
 # These paths are used by the pipeline only. Files at these paths are never
 # committed to version control. See data/templates/ for entry templates.
-PASTURE_CONDITIONS_RAW  = RAW_DIR / "pasture_conditions.csv"
-GRAZING_LOG_RAW         = RAW_DIR / "grazing_log.csv"
-GROUNDWATER_RAW         = RAW_DIR / "groundwater.csv"
-ANIMAL_CONDITION_RAW    = RAW_DIR / "animal_condition.csv"
-PASTURE_WATER_LINK_RAW  = RAW_DIR / "pasture_water_link.csv"
+PASTURE_CONDITIONS_RAW  = RAW_DIR/"pasture_conditions.csv"
+GRAZING_LOG_RAW         = RAW_DIR/"grazing_log.csv"
+GROUNDWATER_RAW         = RAW_DIR/"groundwater.csv"
+ANIMAL_CONDITION_RAW    = RAW_DIR/"animal_condition.csv"
+PASTURE_WATER_LINK_RAW  = RAW_DIR/"pasture_water_link.csv"
 
-PASTURE_PROCESSED       = PROCESSED_DIR / "agriculture.parquet"
-GRAZING_PROCESSED       = PROCESSED_DIR / "grazing.parquet"
-GROUNDWATER_PROCESSED   = PROCESSED_DIR / "groundwater.parquet"
-RECOVERY_PROCESSED      = PROCESSED_DIR / "recovery.parquet"
-WATER_LINK_PROCESSED    = PROCESSED_DIR / "water_pasture_link.parquet"
+PASTURE_PROCESSED       = PROCESSED_DIR/"agriculture.parquet"
+GRAZING_PROCESSED       = PROCESSED_DIR/"grazing.parquet"
+GROUNDWATER_PROCESSED   = PROCESSED_DIR/"groundwater.parquet"
+RECOVERY_PROCESSED      = PROCESSED_DIR/"recovery.parquet"
+WATER_LINK_PROCESSED    = PROCESSED_DIR/"water_pasture_link.parquet"
