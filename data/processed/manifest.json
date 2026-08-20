@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-08-19T20:20:17.087523+00:00",
+  "governance_notice": "Tribal data; distribution requires documented Tribal authority.",
+  "datasets": [],
+  "missing": [
+    "pasture_conditions.csv",
+    "grazing_log.csv",
+    "groundwater.csv",
+    "animal_condition.csv",
+    "pasture_water_link.csv"
+  ]
+}

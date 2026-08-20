@@ -31,8 +31,7 @@ This project is guided by three complementary frameworks:
 | **CARE** | Collective Benefit, Authority to Control, Responsibility, Ethics |
 | **FAIR** | Technical standards: Findable, Accessible, Interoperable, Reusable |
 
-FAIR is the technical floor. CARE and OCAP® are the ethical layer that FAIR alone
-does not address.
+CARE and OCAP® are the ethical layer that FAIR alone does not address.
 
 **Critical distinction in this repo:**
 - `data/raw/`, `data/processed/` gitignored. Tribal data stays on Tribal infrastructure.
@@ -147,7 +146,7 @@ Field data entry templates are in `data/templates/`:
 | 1 | Critical | 🔴 Red | REST |
 
 ## Citation
-Jones, L. and Sanovia, J., (2025). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
+Jones, L. and Sanovia, J., (2026). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
 
 ## Data Governance Contact
 
