@@ -2,7 +2,7 @@
 **Authors:** Lilly Jones, PhD (Daear Consulting, LLC)  
 **Primary Focus:** Oglala Lakota (Pine Ridge), Sicangu Lakota (Rosebud)  
 **In Scope:** All South Dakota Tribal Nations  
-**Status:** Active development
+**Status:** Public analysis reproducibility work; operational tools require local governance approval
 
 ## Overview
 This repository supports Tribal land managers, agricultural programs, and decision
@@ -18,11 +18,10 @@ statistics, weather, and groundwater. These notebooks show what satellite and
 federal data can and cannot see about Tribal agricultural lands and motivate
 the case for Tribal-led data collection.
 
-### Track 2: Operational Pipeline and Dashboard (Tribal Data)
-A processing pipeline and Streamlit dashboard for Tribal observational data:
+### Track 2: Local Operational Prototype (Tribal Data)
+A schema-validation pipeline and local review dashboard for Tribal observational data:
 pasture condition scores, grazing logs, animal condition scores, and well levels.
-**Tribal observational data is never committed to this repository.** It lives on
-Tribal infrastructure and is governed by the Tribal Nation that collected it.
+**Tribal observational data is never committed to this repository.** The prototype does not grant authority to use data or constitute a deployment. A governing Tribal Nation must approve purposes, users, retention, location handling, and release rules before operational use.
 
 ## Data Sovereignty
 This project is guided by three complementary frameworks:
@@ -32,8 +31,7 @@ This project is guided by three complementary frameworks:
 | **CARE** | Collective Benefit, Authority to Control, Responsibility, Ethics |
 | **FAIR** | Technical standards: Findable, Accessible, Interoperable, Reusable |
 
-FAIR is the technical floor. CARE and OCAP® are the ethical layer that FAIR alone
-does not address.
+CARE and OCAP® are the ethical layer that FAIR alone does not address.
 
 **Critical distinction in this repo:**
 - `data/raw/`, `data/processed/` gitignored. Tribal data stays on Tribal infrastructure.
@@ -44,7 +42,7 @@ does not address.
 ```
 tribal_ag_sd/
 ├── notebooks/              # Analysis notebooks (public data)
-├── pipeline/               # Data processing scripts (Tribal data)
+├── scripts/                # Notebook runner, validation, templates, local pipeline
 ├── app/                    # Streamlit dashboard
 │   └── components/
 ├── src/                    # Shared Python modules
@@ -84,17 +82,34 @@ tribal_ag_sd/
 ```bash
 conda env create -f environment.yml
 conda activate tribal-ag-sd
-jupyter lab notebooks/
+python scripts/run_notebooks.py
+python scripts/validate_project.py
 ```
+The notebooks run in numeric dependency order. Executed copies are written to `outputs/executed_notebooks/`; source notebooks are not overwritten.
+
+Notebook 03 uses the ORNL MODIS service, which limits each request to ten composite tiles; downloads are chunked and cached and can take substantial time on the first run. Notebook 04 requires `NASS_API_KEY`. A run stops on missing credentials or upstream failure rather than substituting synthetic or neutral data.
 ### Operational pipeline (requires Tribal data in data/raw/)
 ```bash
 # Add data files to data/raw/ using templates from data/templates/
+python scripts/create_templates.py
 python scripts/run_pipeline.py
 ```
 ### Dashboard
 ```bash
 streamlit run app/app.py
 ```
+The dashboard is local-only and deliberately provides no export control. Do not deploy it until the governance gate in `docs/methodology.md` is complete.
+
+### Tests and environment lock
+
+```bash
+pytest -q
+conda-lock -f environment.yaml -p win-64 -p linux-64
+```
+
+Commit the generated lock file when dependency resolution is intentionally refreshed.
+
+After producing or importing public artifacts, run `python scripts/write_provenance.py` to record checksums and the Git revision. Presence in `outputs/` does not itself mean an artifact has passed scientific or Tribal release review.
 
 ## Environment Variables
 Create a `.env` file in the repo root (never committed):
@@ -131,7 +146,7 @@ Field data entry templates are in `data/templates/`:
 | 1 | Critical | 🔴 Red | REST |
 
 ## Citation
-Jones, L. and Sanovia, J., (2025). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
+Jones, L. and Sanovia, J., (2026). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
 
 ## Data Governance Contact
 
