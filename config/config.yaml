@@ -6,9 +6,9 @@
 
 # Pasture condition 
 pasture:
-  critical_score: 2       # condition_score <= this → Critical
-  watch_score:    3       # condition_score == this → Watch
-  healthy_score:  4       # condition_score >= this → Healthy
+  critical_score: 2       # condition_score <= this = Critical
+  watch_score:    3       # condition_score == this = Watch
+  healthy_score:  4       # condition_score >= this = Healthy
 
 # Grazing pressure (Animal Unit Days/acre)
 grazing_pressure:
