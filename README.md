@@ -1,13 +1,15 @@
 # Tribal Agriculture and Land Health in South Dakota
 **Authors:** Lilly Jones, PhD (Daear Consulting, LLC)  
-**Primary Focus:** Oglala Lakota (Pine Ridge), Sicangu Lakota (Rosebud)  
-**In Scope:** All South Dakota Tribal Nations  
-**Status:** Public analysis reproducibility work; operational tools require local governance approval
+**Developed for:** Oglala Lakota College  
+**Funding:** Developed as part of a project funded by USDA NIFA  
+**Project role:** Daear Consulting LLC developed the geospatial code, workflows, and documentation under contract to Oglala Lakota College.  
+**Primary instructional focus:** Pine Ridge and Oglala Lakota; other geographies are regional context only  
+**Status:** Public-data educational analysis; operational prototype inactive pending locally authorized governance
 
 ## Overview
-This repository supports Tribal land managers, agricultural programs, and decision
-makers working on agriculture, rangeland health, and food sovereignty across South
-Dakota Tribal Nations.
+This repository provides reproducible public-data analyses and learning-design
+stubs for OLC. It does not represent or operate on behalf of South Dakota Tribal
+Nations, and it does not establish approved agricultural or land-management decisions.
 
 It operates on two parallel tracks:
 
@@ -18,20 +20,20 @@ statistics, weather, and groundwater. These notebooks show what satellite and
 federal data can and cannot see about Tribal agricultural lands and motivate
 the case for Tribal-led data collection.
 
-### Track 2: Local Operational Prototype (Tribal Data)
-A schema-validation pipeline and local review dashboard for Tribal observational data:
+### Track 2: Inactive Schema Prototype
+A schema-validation and local-dashboard prototype illustrating possible fields for observational data:
 pasture condition scores, grazing logs, animal condition scores, and well levels.
-**Tribal observational data is never committed to this repository.** The prototype does not grant authority to use data or constitute a deployment. A governing Tribal Nation must approve purposes, users, retention, location handling, and release rules before operational use.
+**No Tribal observational data is included or authorized for use.** The committed spreadsheets are empty schema examples. The prototype does not grant authority to collect or process data and is not a deployment. A governing Nation must approve purposes, stewardship, infrastructure, users, retention, location handling, analysis, and release rules before use.
 
 ## Data Sovereignty
-This project is guided by three complementary frameworks:
+Potential reference frameworks remain under local review:
 | Framework | What it governs |
 |---|---|
-| **OCAP®** | Tribal Nations own, control, access, and possess their data |
+| **OCAP®** | Canadian First Nations framework; local applicability must not be assumed |
 | **CARE** | Collective Benefit, Authority to Control, Responsibility, Ethics |
 | **FAIR** | Technical standards: Findable, Accessible, Interoperable, Reusable |
 
-CARE and OCAP® are the ethical layer that FAIR alone does not address.
+Naming a framework does not imply that OLC, OST, or another Nation has adopted it. See `docs/data_governance.md`.
 
 **Critical distinction in this repo:**
 - `data/raw/`, `data/processed/` gitignored. Tribal data stays on Tribal infrastructure.
@@ -88,9 +90,10 @@ python scripts/validate_project.py
 The notebooks run in numeric dependency order. Executed copies are written to `outputs/executed_notebooks/`; source notebooks are not overwritten.
 
 Notebook 03 uses the ORNL MODIS service, which limits each request to ten composite tiles; downloads are chunked and cached and can take substantial time on the first run. Notebook 04 requires `NASS_API_KEY`. A run stops on missing credentials or upstream failure rather than substituting synthetic or neutral data.
-### Operational pipeline (requires Tribal data in data/raw/)
+### Inactive schema prototype
 ```bash
-# Add data files to data/raw/ using templates from data/templates/
+# Do not add operational data without an approved governance process.
+# The following validates empty/example schemas during development only.
 python scripts/create_templates.py
 python scripts/run_pipeline.py
 ```
@@ -98,7 +101,7 @@ python scripts/run_pipeline.py
 ```bash
 streamlit run app/app.py
 ```
-The dashboard is local-only and deliberately provides no export control. Do not deploy it until the governance gate in `docs/methodology.md` is complete.
+The dashboard is local-only evaluation software. Do not load operational data or deploy it until the governing Nation approves the complete governance gate.
 
 ### Tests and environment lock
 
@@ -135,7 +138,9 @@ Field data entry templates are in `data/templates/`:
 | `animal_condition_template.xlsx` | herd_id, date, condition_score (1–9 BCS), notes |
 | `pasture_water_link_template.xlsx` | pasture_id, well_id |
 
-## Condition Score Reference (NRCS 5-Point Scale)
+## Example Condition-Score Configuration
+
+These are unapproved software examples, not OLC/OST or NRCS-endorsed action rules.
 
 | Score | Meaning | Dashboard Color | Action |
 |---|---|---|---|
@@ -145,12 +150,14 @@ Field data entry templates are in `data/templates/`:
 | 2 | Poor | 🟠 Orange | Reduce grazing |
 | 1 | Critical | 🔴 Red | REST |
 
+## Learning and review materials
+
+The notebook learning sections are stubs. OLC will develop the full instructional materials, facilitation choices, and curriculum. See `docs/learning_design.md`, `docs/facilitator_guide.md`, `docs/assumptions_register.md`, and `docs/review_checklist.md`.
+
 ## Citation
-Jones, L. and Sanovia, J., (2026). Tribal Agriculture and Land Health in South Dakota. Daear Consulting, LLC.
+
+Citation metadata, author order, OLC attribution, copyright ownership, and complete NIFA award details remain pending review.
 
 ## Data Governance Contact
 
-For questions about data use, Tribal data governance, or collaboration:  
-**James Sanovia, MS**  
-Daear Consulting, LLC  
-[daearconsulting@gmail.com](mailto:daearconsulting@gmail.com)
+The appropriate OLC/OST governance contact and release authority remain to be confirmed. Daear Consulting LLC is the development contractor and should not be represented as Tribal data-governance authority.

@@ -1,12 +1,12 @@
 """
 constants.py: Shared constants for Tribal Agriculture & Land Health series.
 
-Scope: South Dakota Tribal Nations, with primary focus on Oglala Lakota
-(Pine Ridge) and secondary focus on Rosebud Sioux.
+Scope: Pine Ridge/Oglala Lakota primary instructional focus, with other
+South Dakota geographies included only as public-data regional context.
 
 Design principles
-- SD_TRIBES_PRIMARY : Pine Ridge and Rosebud: real or near-real data expected
-- SD_TRIBES_ALL     : All South Dakota Tribal Nations in scope
+- SD_TRIBES_PRIMARY : Pine Ridge/Oglala Lakota study focus
+- SD_TRIBES_ALL     : contextual comparison geographies, not represented Nations
 - Relative paths throughout (public repo)
 - Real data only in analysis notebooks: no synthetic data
 - Tribal observational data (pasture, grazing, wells) is NEVER committed
@@ -37,11 +37,11 @@ CRS_PROJECTED  = "EPSG:5070"    # Albers Equal Area CONUS (for area/distance)
 # Primary focus: analysis notebooks use real or near-real data
 SD_TRIBES_PRIMARY = [
     "Oglala Lakota",       # Pine Ridge: largest reservation in SD by land area
-    "Rosebud Sioux",       # Rosebud: adjacent to Pine Ridge, similar ecology and geology
 ]
 
 # Secondary focus: notebooks extended where public data supports it
 SD_TRIBES_SECONDARY = [
+    "Rosebud Sioux",
     "Standing Rock Sioux",
     "Cheyenne River Sioux",
     "Lower Brule Sioux",
@@ -50,7 +50,7 @@ SD_TRIBES_SECONDARY = [
     "Flandreau Santee Sioux",
 ]
 
-# All SD Tribes in scope
+# Public-data contextual geographies; inclusion does not imply representation.
 SD_TRIBES_ALL = SD_TRIBES_PRIMARY + SD_TRIBES_SECONDARY
 
 # Census TIGER AIANNH name matching: exact strings as they appear in Census data
@@ -72,7 +72,7 @@ CENSUS_TO_COMMON = {v: k for k, v in CENSUS_NAME_MAP.items()}
 # South Dakota bounding box 
 SD_BBOX = (-104.06, 42.48, -96.44, 45.95)   # (min_lon, min_lat, max_lon, max_lat)
 
-# Pine Ridge/southern SD focus bbox (covers Pine Ridge + Rosebud + adjacent)
+# Pine Ridge and southern-South-Dakota public-data context envelope.
 PINE_RIDGE_BBOX = (-103.5, 42.5, -100.0, 44.0)
 
 # Pasture condition score definitions

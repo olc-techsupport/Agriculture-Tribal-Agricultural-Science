@@ -33,6 +33,8 @@ def write_manifest(repo_root: Path, outputs: list[Path], inputs: list[Path], *, 
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "git_revision": git_revision(repo_root),
         "notes": notes,
+        "review_status": "screening-level; not approved for operational use or external attribution",
+        "governance_status": "draft; responsible local authority and release process pending confirmation",
         "inputs": [{"path": str(p.relative_to(repo_root)), "sha256": sha256(p)} for p in inputs if p.exists()],
         "outputs": [{"path": str(p.relative_to(repo_root)), "sha256": sha256(p)} for p in existing_outputs],
     }

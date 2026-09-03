@@ -3,8 +3,9 @@ from __future__ import annotations
 """
 sovereignty.py Data governance framework for Tribal Agriculture series.
 
-This module implements OCAP®, CARE, and FAIR frameworks for all data used
-in this series. It also defines the critical distinction between:
+This module records draft governance notes and data-source distinctions.
+It does not implement governance, establish consent, or claim that OLC, OST,
+or another Nation has adopted a named framework. It distinguishes:
 
   PUBLIC DATA     : federal/public datasets used in analysis notebooks
   TRIBAL DATA     : Tribal observational data used in the pipeline only
@@ -164,7 +165,8 @@ DATA_SOURCES: dict[str, DataSource] = {
         attribution="USGS National Water Information System (NWIS).",
         care_notes=(
             "USGS monitoring well coverage is much sparser on Tribal lands than "
-            "on surrounding lands. The monitoring gap itself is an equity finding."
+            "in the selected query. Causes and equity implications require "
+            "additional evidence and locally authorized review."
         ),
     ),
 
@@ -266,13 +268,13 @@ DATA_SOURCES: dict[str, DataSource] = {
 # Acknowledgment and citation functions 
 
 _FRAMEWORK_PREAMBLE = """
-DATA SOVEREIGNTY ACKNOWLEDGMENT
+DATA GOVERNANCE ACKNOWLEDGMENT (DRAFT; LOCAL REVIEW PENDING)
 This analysis uses data that describes Indigenous and Tribal lands,
 communities, and agricultural and water systems. This project is
-guided by three complementary data governance frameworks:
+informed by reference frameworks whose local applicability remains under review:
 
-OCAP®  : Tribal Nations own, control, access, and possess data about
-  their own communities and territories.
+OCAP®  : A Canadian First Nations framework included as a reference point;
+  naming it does not mean it has been adopted locally.
   Reference: https://fnigc.ca/ocap-training/
 
 CARE   : Data use must deliver Collective Benefit to Indigenous peoples,
@@ -281,8 +283,8 @@ CARE   : Data use must deliver Collective Benefit to Indigenous peoples,
   Reference: https://www.gida-global.org/care
 
 FAIR   : Data is Findable, Accessible, Interoperable, and Reusable.
-  FAIR governs technical standards; CARE and OCAP® govern the ethical
-  obligations to Tribal Nations that FAIR alone does not address.
+  FAIR governs technical standards; it does not determine local authority,
+  ethics, permission, or release decisions.
   Reference: https://www.go-fair.org/fair-principles/
 
 IEEE 2890-2025 : Recommended Practice for Provenance of Indigenous Peoples' Data.
@@ -297,8 +299,8 @@ CRITICAL DISTINCTION IN THIS SERIES:
   TRIBAL DATA  : Tribal observational data (pasture conditions, grazing
                  logs, animal counts, well levels). This data is NEVER
                  committed to this repository. It lives on Tribal
-                 infrastructure and is governed exclusively by the
-                 Tribal Nation that collected it.
+                 infrastructure only under a separately approved process.
+                 No such operational dataset is included or authorized here.
 """
 
 _TEK_DISCLAIMER = """
@@ -312,8 +314,9 @@ conditions on Tribal lands. These proxies do not represent:
   • Seasonal patterns observed through Tribal cultural practice
   • The relationship between land condition and cultural wellbeing
 
-Analysis results should be validated with Tribal land managers and
-cultural knowledge holders before being used for decision-making.
+The repository cannot authorize collection from or validation by local
+knowledge holders. Any such process requires appropriate governance,
+consent, purpose, and local authority before it begins.
 """
 
 
@@ -363,4 +366,3 @@ def check_tribal_data_governance(source_key: str) -> dict:
         "ocap_notes":      src.ocap_notes,
         "care_notes":      src.care_notes,
     }
-

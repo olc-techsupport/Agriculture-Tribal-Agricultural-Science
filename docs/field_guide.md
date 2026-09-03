@@ -1,23 +1,7 @@
-# Field guide
-# Field guide
+# Prototype field-schema guide
 
-1. Confirm authority to collect every field and identify permitted users.
-2. Record locally approved protocols, units, coordinate datum, and training version.
-3. Use program identifiers instead of personal names and approved infrastructure only.
-4. Use templates in `data/templates/`, ISO dates, and one observation per row.
-5. Never enter zero for an unknown value or infer a measurement.
-6. Avoid cultural knowledge, personal information, and sensitive locations in free text unless authorized.
-7. Field staff review entries; the program steward approves analysis; designated Tribal authority controls release.
-## Before collection
+This is a software-schema reference, not an authorized field protocol or instructional manual. OLC will develop full instructional materials; any governing Nation must separately approve operational collection.
 
-1. Confirm authority to collect each field and identify permitted users.
-2. Record the locally approved scoring protocol, units, coordinate datum, and training version.
-3. Use stable program identifiers instead of personal names.
-4. Store files only on infrastructure approved by the governing Tribal Nation.
+Before use, confirm authority to collect every field, responsible steward, permitted users, approved infrastructure, units, coordinate and vertical datums, identifiers, training version, retention, and release rules. Never enter zero for an unknown value or infer a measurement. Do not place cultural knowledge, personal information, or sensitive locations in notes unless explicitly authorized.
 
-## Collection and review
-
-- Use templates in `data/templates/`, ISO dates, and one observation per row.
-- Never enter zero when the value is unknown and never infer a measurement.
-- Avoid cultural knowledge, personal information, and sensitive locations in free text unless authorized.
-- Field staff review entries, the program steward approves analysis, and the designated Tribal authority decides whether results may be shared.
+The templates demonstrate one-row-per-observation structure and ISO `YYYY-MM-DD` dates. They must be adapted only through an approved local process. Field review, analytical approval, and release authority are distinct roles and remain to be defined.

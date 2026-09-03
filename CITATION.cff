@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Citation metadata is provisional pending OLC approval and complete NIFA award information."
+title: "Tribal Agriculture and Land Health: Public-Data Analysis Repository"
+type: software
+authors:
+  - family-names: "Jones"
+    given-names: "Lilly"
+    affiliation: "Daear Consulting LLC"
+abstract: >
+  Reproducible geospatial code, workflows, documentation, and OLC-adaptable
+  learning stubs developed under contract to Oglala Lakota College.
+license: Apache-2.0
+notes: >
+  OLC will develop the full instructional materials. Author order, OLC
+  attribution, copyright ownership, governance review, and the complete NIFA
+  award name and number remain pending. This record does not imply OLC, OST,
+  or another Nation's approval of outputs or conclusions.
+keywords:
+  - agriculture
+  - land health
+  - reproducible research
+  - Oglala Lakota College

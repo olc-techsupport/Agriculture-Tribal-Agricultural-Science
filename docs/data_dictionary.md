@@ -1,25 +1,13 @@
-# Data dictionary
-# Data dictionary
+# Prototype data dictionary
 
-Operational files are local, governed data and never committed. Dates use ISO `YYYY-MM-DD`.
+The committed workbooks are empty schema examples. No operational dataset is included or authorized. Missing observations remain missing and must never be converted to neutral, healthy, or zero status.
 
-| Dataset | Required fields | Validation and sensitivity |
+| Schema | Example fields | Validation and sensitivity |
 |---|---|---|
-| Pasture conditions | `pasture_id`, `date`, `condition_score`, `notes` | Score 1–5; identifiers/notes may be sensitive |
-| Grazing log | `pasture_id`, `date`, `animal_count`, `days_grazed`, `pasture_area_acres` | Values non-negative; operationally sensitive |
-| Groundwater | `well_id`, `date`, `water_level_ft`, `lat`, `lon` | Coordinates valid WGS84 and highly sensitive; record local vertical datum |
-| Animal condition | `herd_id`, `date`, `condition_score`, `notes` | Score 1–9; operationally sensitive |
-| Pasture-water link | `pasture_id`, `well_id` | Sensitive infrastructure relationship |
-
-Missing observations remain missing; they are never converted to neutral or healthy status.
-Operational files are local, governed data and are never committed. Dates use ISO `YYYY-MM-DD` format.
-
-| Dataset | Required fields | Validation and sensitivity |
-|---|---|---|
-| Pasture conditions | `pasture_id`, `date`, `condition_score`, `notes` | Score 1–5; identifiers and notes may be sensitive |
+| Pasture conditions | `pasture_id`, `date`, `condition_score`, `notes` | Example score range 1–5; identifiers and notes may be sensitive |
 | Grazing log | `pasture_id`, `date`, `animal_count`, `days_grazed`, `pasture_area_acres` | Numeric values non-negative; operationally sensitive |
-| Groundwater | `well_id`, `date`, `water_level_ft`, `lat`, `lon` | Coordinates valid WGS84 and highly sensitive; document local vertical datum |
-| Animal condition | `herd_id`, `date`, `condition_score`, `notes` | Score 1–9; operationally sensitive |
+| Groundwater | `well_id`, `date`, `water_level_ft`, `lat`, `lon` | Coordinates valid WGS84; locations highly sensitive; local vertical datum required |
+| Animal condition | `herd_id`, `date`, `condition_score`, `notes` | Example score range 1–9; operationally sensitive |
 | Pasture-water link | `pasture_id`, `well_id` | Sensitive infrastructure relationship |
 
-Missing observations remain missing. They must not be converted to neutral or healthy status.
+Names, fields, ranges, units, and required status must be reviewed and approved before operational use.

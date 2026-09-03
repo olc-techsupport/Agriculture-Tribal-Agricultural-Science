@@ -1,8 +1,9 @@
 # config.yaml Centralized thresholds for Tribal Ag & Land Health series
 #
-# All threshold values used by the pipeline and dashboard live here.
-# Field staff and Tribal programs can adjust these without touching code.
-# Changes here flow through to pipeline outputs and dashboard displays.
+# All values below are transparent software examples for evaluation.
+# They are not approved operational, grazing, animal-health, water, drought,
+# or management thresholds. Local use requires an authorized governance and
+# scientific review process; changing a value does not confer approval.
 
 # Pasture condition 
 pasture:
@@ -89,4 +90,3 @@ analysis:
   mid_century:  [2040, 2069]
   end_century:  [2070, 2099]
   historical:   [1981, 2010]
-
