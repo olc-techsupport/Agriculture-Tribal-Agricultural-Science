@@ -4,7 +4,12 @@
 **Funding:** Developed as part of a project funded by USDA NIFA  
 **Project role:** Daear Consulting LLC developed the geospatial code, workflows, and documentation under contract to Oglala Lakota College.  
 **Primary instructional focus:** Pine Ridge and Oglala Lakota; other geographies are regional context only  
-**Status:** Public-data educational analysis; operational prototype inactive pending locally authorized governance
+**Status:** Public-data educational analysis; operational prototype inactive pending locally authorized governance   
+**License:** Apache License 2.0 (code; review of other materials is pending)
+
+## Data Sovereignty and Governance (draft under review)
+This repository contains workflows developed for use in support of Oglala Lakota College and Oglala Sioux Tribe–related research, education, and data activities. Public availability of code or documentation does not imply that Tribal data, knowledge, or derived information are open or unrestricted. Use of Tribal data and knowledge remains subject to applicable Tribal governance, permissions, protocols, and data sovereignty requirements.
+
 
 ## Overview
 This repository provides reproducible public-data analyses and learning-design

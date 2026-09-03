@@ -1,5 +1,6 @@
-"""Apply OLC-owned learning stubs and clean source notebook state."""
 from __future__ import annotations
+
+"""Apply OLC-owned learning stubs and clean source notebook state."""
 
 import json
 import uuid
@@ -23,7 +24,7 @@ def cell(text: str) -> dict:
 
 
 def main() -> None:
-    for path in sorted((ROOT / "notebooks").glob("[0-9][0-9]_*.ipynb")):
+    for path in sorted((ROOT/"notebooks").glob("[0-9][0-9]_*.ipynb")):
         number = path.name[:2]
         notebook = json.loads(path.read_text(encoding="utf-8"))
         cells = []
@@ -53,7 +54,7 @@ By the end of this notebook, learners will be able to:
 
 ## Prerequisites and Timing
 
-Allow 75–100 minutes. Activate the project environment, read `docs/data_governance.md`, and complete the preceding notebook where applicable. Work in pairs and rotate analyst, data-steward, skeptic, and documentarian roles.
+Allow 75-100 minutes. Activate the project environment, read `docs/data_governance.md`, and complete the preceding notebook where applicable. Work in pairs and rotate analyst, data-steward, skeptic, and documentarian roles.
 
 ## Governance Checkpoint
 

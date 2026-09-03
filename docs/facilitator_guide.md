@@ -2,7 +2,7 @@
 
 This guide supports OLC adaptation of the repository's learning stubs; it is not a finished curriculum.
 
-Allow 75–100 minutes per notebook: orient to objectives and governance (10 minutes), predict (10), run and inspect in pairs (30–40), interpret (15–20), and make one reviewed documentation or reproducibility contribution (10–20).
+Allow 75-100 minutes per notebook: orient to objectives and governance (10 minutes), predict (10), run and inspect in pairs (30–40), interpret (15–20), and make one reviewed documentation or reproducibility contribution (10–20).
 
 Rotate facilitator, data-steward, analyst, skeptic, documentarian, and reviewer roles. Reading, questioning, stewardship, and documentation are technical contributions.
 

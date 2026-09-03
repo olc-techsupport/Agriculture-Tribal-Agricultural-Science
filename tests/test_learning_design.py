@@ -30,8 +30,8 @@ def test_notebooks_clean_and_code_parses() -> None:
 
 
 def test_project_role_and_curriculum_ownership() -> None:
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    learning = (ROOT / "docs" / "learning_design.md").read_text(encoding="utf-8")
+    readme = (ROOT/"README.md").read_text(encoding="utf-8")
+    learning = (ROOT/"docs"/"learning_design.md").read_text(encoding="utf-8")
     assert "geospatial code, workflows, and documentation under contract" in readme
     assert "OLC will develop the full instructional materials" in learning
     assert "instructional materials under contract" not in readme
