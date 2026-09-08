@@ -166,3 +166,7 @@ Citation metadata, author order, OLC attribution, copyright ownership, and compl
 ## Data Governance Contact
 
 The appropriate OLC/OST governance contact and release authority remain to be confirmed. Daear Consulting LLC is the development contractor and should not be represented as Tribal data-governance authority.
+
+## Project copyright
+
+Copyright (c) 2026 Daear Consulting, LLC. See [COPYRIGHT](COPYRIGHT) and [LICENSE](LICENSE).
